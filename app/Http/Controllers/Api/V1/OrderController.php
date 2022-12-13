@@ -53,7 +53,7 @@ class OrderController extends Controller
         $request->validate([
 
             'payment_id' => 'required|exists:payments,id',
-            'address_id' => 'required|exists:addresses,id',
+            'address' => 'required|',
             'customer_name' => 'required|max:250',
             'customer_phone' => 'required|numeric',
             'total_price' => 'required|numeric',
@@ -68,7 +68,7 @@ class OrderController extends Controller
         $order = Order::create([
             'user_id' => $user_id,
             'payment_id' => $request->payment_id,
-            'address_id' => $request->address_id,
+            'guest_address' => $request->address,
             'customer_name' => $request->customer_name,
             'customer_phone' => $request->customer_phone,
             'total_price' => $request->total_price,
