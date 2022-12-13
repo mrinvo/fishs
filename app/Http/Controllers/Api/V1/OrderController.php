@@ -53,7 +53,7 @@ class OrderController extends Controller
         $request->validate([
 
             'payment_id' => 'required|exists:payments,id',
-            'address' => 'required|',
+            'address' => 'required',
             'customer_name' => 'required|max:250',
             'customer_phone' => 'required|numeric',
             'total_price' => 'required|numeric',
