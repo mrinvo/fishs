@@ -10,7 +10,16 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
     //
+    public function search(Request $request){
+        $products = Product::where('name', 'like', $request->q)->get();
+        $response = [
+            'message' => trans('api.stored'),
+            'data' => $products,
 
+        ];
+
+        return response($response,201);
+    }
     public function store(Request $request)
     {
         $request->validate([

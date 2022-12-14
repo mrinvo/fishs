@@ -87,6 +87,7 @@ Route::group(['prefix' => 'v1' ,'middleware' => 'lang'], function () {
     Route::get('/product/show/{id}',[ProductController::class,'show']);
     Route::get('/product/category/{cat_id}',[ProductController::class,'CategoriesProduct']);
     Route::get('/product/check/{id}',[ProductController::class,'check']);
+    Route::post('/product/search',[ProductController::class,'search']);
 
     //products end
 
