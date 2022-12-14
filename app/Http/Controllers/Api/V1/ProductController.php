@@ -13,8 +13,10 @@ class ProductController extends Controller
     public function search(Request $request){
 
         $products = Product::where('name_en','LIKE','%'.$request->q.'%')->orWhere('name_ar','LIKE','%'.$request->q.'%')->get();
+
         $response = [
             'message' => trans('api.stored'),
+            'count' => count($products),
             'data' => $products,
 
         ];
