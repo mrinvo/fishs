@@ -184,28 +184,6 @@
             </ul>
           </li>
 
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link {{ (Route::currentRouteName() == 'admin.rule.*') ? 'active' : "" }}">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                الشروط والاجكام
-                <i class="fas fa-angle-left right"></i>
-                <span class="badge badge-info right"></span>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-
-              <li class="nav-item">
-                <a href="{{ route('admin.rule.edit') }}" class="nav-link {{ (Route::currentRouteName() == 'admin.rule.edit') ? 'active' : "" }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>تعديل الشروط والاجكام</p>
-                </a>
-              </li>
-
-
-            </ul>
-          </li>
-
 
         </ul>
       </nav>
