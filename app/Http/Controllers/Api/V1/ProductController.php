@@ -11,7 +11,8 @@ class ProductController extends Controller
 {
     //
     public function search(Request $request){
-        $products = Product::where('name', 'like', $request->q)->get();
+
+        $products = Product::where('name','LIKE','%'.$request->q.'%')->get();
         $response = [
             'message' => trans('api.stored'),
             'data' => $products,
