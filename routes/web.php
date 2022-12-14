@@ -112,7 +112,6 @@ Route::prefix('/dashboard')->name('admin.')->group(function (){
         Route::post('/user/store',[UserController::class,'store'])->name('user.store');
         Route::get('/user/edit/{id}',[UserController::class,'edit'])->name('user.edit');
 
-        Route::get('/product/delete/{id}',[UserController::class,'delete'])->name('product.delete');
 
         //end cacleaning routes
 
