@@ -12,7 +12,16 @@ class ProductController extends Controller
     //
     public function search(Request $request){
 
-        $products = Product::where('name_en','LIKE','%'.$request->q.'%')->orWhere('name_ar','LIKE','%'.$request->q.'%')->get();
+        $products = Product::select(
+        'id',
+        'name_'.app()->getLocale().' as name',
+        'description_'.app()->getLocale().' as description',
+        'price',
+        'have_discount',
+        'discounted_price',
+        'category_id',
+        'img',
+        'isfish',)->where('name_en','LIKE','%'.$request->q.'%')->orWhere('name_ar','LIKE','%'.$request->q.'%')->get();
 
         $response = [
             'message' => trans('api.stored'),
